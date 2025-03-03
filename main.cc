@@ -64,7 +64,7 @@ void instructions(){
     cout << " 1. Select a space (Example: A1, C9, etc)\n";
     cout << " 2. A number represents how many mines are around the space\n";
     cout << " 3. You can flag a space where you think a mine is\n";
-    cout << " 4. To flag, type F after the space name (Exapmle: A1F, G4F, etc)\n";
+    cout << " 4. To flag, type F after the space name (Example: A1F, G4F, etc)\n";
     cout << " 5. You win when every space is revealed or flagged\n" << endl;
     cout << " 1) Back To Menu\n" << " -> ";
     cin >> X;
