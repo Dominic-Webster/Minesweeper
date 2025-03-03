@@ -38,6 +38,12 @@
 
 ### History
 
+#### UPDATE 1.0.1
+03/03/2025
+- Quality of Life updates
+
+#### _______________________________________
+
 #### Game Release (V 1.0.0)
 03/03/2025
 - Base game released
