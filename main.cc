@@ -282,7 +282,7 @@ void create(){
     //reveal based on difficulty
     int rev = (rand() % 6) + 1;
     if(dif == 3){
-        COUNT = 9;
+        COUNT = 11;
         COLUMN[rev].row[rev] = SEC_COL[rev].row[rev];
         COLUMN[rev + 1].row[rev] = SEC_COL[rev + 1].row[rev];
         COLUMN[rev - 1].row[rev] = SEC_COL[rev - 1].row[rev];
@@ -292,9 +292,11 @@ void create(){
         COLUMN[rev - 1].row[rev + 1] = SEC_COL[rev - 1].row[rev + 1];
         COLUMN[rev - 1].row[rev - 1] = SEC_COL[rev - 1].row[rev - 1];
         COLUMN[rev + 1].row[rev + 1] = SEC_COL[rev + 1].row[rev + 1];
+        COLUMN[rev + 2].row[rev] = SEC_COL[rev + 2].row[rev];
+        COLUMN[rev].row[rev + 2] = SEC_COL[rev].row[rev + 2];
     }
     else if(dif == 4){
-        COUNT = 7;
+        COUNT = 8;
         COLUMN[rev].row[rev] = SEC_COL[rev].row[rev];
         COLUMN[rev + 1].row[rev] = SEC_COL[rev + 1].row[rev];
         COLUMN[rev - 1].row[rev] = SEC_COL[rev - 1].row[rev];
@@ -302,6 +304,7 @@ void create(){
         COLUMN[rev].row[rev - 1] = SEC_COL[rev].row[rev - 1];
         COLUMN[rev + 1].row[rev - 1] = SEC_COL[rev + 1].row[rev - 1];
         COLUMN[rev - 1].row[rev + 1] = SEC_COL[rev - 1].row[rev + 1];
+        COLUMN[rev - 1].row[rev - 1] = SEC_COL[rev - 1].row[rev - 1];
     }
     else{
         COUNT = 5;
