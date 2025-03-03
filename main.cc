@@ -43,6 +43,7 @@ void menu(){
     else if (X == "2"){instructions();}
     else if (X == "3"){change_dif();}
     else if (X == "4"){
+        system("clear");
         cout << "Thank you for playing!\n";
         exit(0);
     }
@@ -365,7 +366,7 @@ void calculate(string str){
                 cin >> X;
                 if(X == "1"){set_display(); create(); display();}
                 else if(X == "2"){menu();}
-                else{exit(0);}
+                else{system("clear"); cout << "Thank you for playing!\n"; exit(0);}
             }
         }
         else{
@@ -389,7 +390,7 @@ void calculate(string str){
                 cin >> X;
                 if(X == "1"){set_display(); create(); display();}
                 else if(X == "2"){menu();}
-                else{exit(0);}
+                else{system("clear"); cout << "Thank you for playing!\n"; exit(0);}
             }
             else{
                 COLUMN[column].row[row] = SEC_COL[column].row[row];
