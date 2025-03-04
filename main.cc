@@ -344,8 +344,8 @@ void calculate(string str){
 
         if(str.length() == 3){ //flagging
             if(SEC_COL[column].row[row] == 'X'){
+                if(COLUMN[column].row[row] == '-'){COUNT++;}
                 COLUMN[column].row[row] = 'X';
-                COUNT++;
                 if(COUNT == 81){win();}
                 display();
             }
@@ -396,8 +396,8 @@ void calculate(string str){
                 else{system("clear"); cout << "Thank you for playing!\n"; exit(0);}
             }
             else{
+                if(COLUMN[column].row[row] == '-'){COUNT++;}
                 COLUMN[column].row[row] = SEC_COL[column].row[row];
-                COUNT++;
                 if(COUNT == 81){win();}
                 display();
             }
