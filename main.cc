@@ -355,44 +355,52 @@ void calculate(string str){
             else{
                 system("clear");
                 COLUMN[column].row[row] = '+';
-                cout << " | A  B  C  D  E  F  G  H  I\n";
+                cout << " | \e[32mA  B  C  D  E  F  G  H  I\e[0m\n";
                 cout << "—|———————————————————————————\n";
                 for (int i = 0; i < 9; i++){
-                    cout << (i + 1) << "| ";
+                    cout << "\e[32m" << (i + 1) << "\e[0m| ";
                     for (int j = 0; j < 9; j++){
-                        cout << COLUMN[i].row[j] << "  ";
+                        if(COLUMN[i].row[j] == 'X'){cout << "\e[31m";}
+                        else if(COLUMN[i].row[j] == '-'){cout << "\e[37m";}
+                        else if(COLUMN[i].row[j] == '+'){cout << "\e[36m";}
+                        else{cout << "\e[33m";}
+                        cout << COLUMN[i].row[j] << "  \e[0m";
                     }
                     cout << endl;
                 }
-                cout << endl << "INCORRECT FLAG\n";
-                cout << "GAME OVER\n" << endl;
-                cout << " 1) Play Again\n";
-                cout << " 2) Back To Menu\n";
-                cout << " 3) Exit Game\n";
+                cout << endl << "\e[31mINCORRECT FLAG\n";
+                cout << "GAME OVER\e[0m\n" << endl;
+                cout << "\e[32m 1)\e[0m Play Again\n";
+                cout << "\e[32m 2)\e[0m Back To Menu\n";
+                cout << "\e[31m 3)\e[0m Exit Game\n";
                 cin >> X;
                 if(X == "1"){set_display(); create(); display();}
                 else if(X == "2"){menu();}
-                else{system("clear"); cout << "Thank you for playing!\n"; exit(0);}
+                else{system("clear"); cout << "\e[33mThank you for playing!\e[0m\n"; exit(0);}
             }
         }
         else{
             if(SEC_COL[column].row[row] == 'X'){
                 system("clear");
                 COLUMN[column].row[row] = '+';
-                cout << " | A  B  C  D  E  F  G  H  I\n";
+                cout << " | \e[32mA  B  C  D  E  F  G  H  I\e[0m\n";
                 cout << "—|———————————————————————————\n";
                 for (int i = 0; i < 9; i++){
-                    cout << (i + 1) << "| ";
+                    cout << "\e[32m" << (i + 1) << "\e[0m| ";
                     for (int j = 0; j < 9; j++){
-                        cout << COLUMN[i].row[j] << "  ";
+                        if(COLUMN[i].row[j] == 'X'){cout << "\e[31m";}
+                        else if(COLUMN[i].row[j] == '-'){cout << "\e[37m";}
+                        else if(COLUMN[i].row[j] == '+'){cout << "\e[36m";}
+                        else{cout << "\e[33m";}
+                        cout << COLUMN[i].row[j] << "  \e[0m";
                     }
                     cout << endl;
                 }
-                cout << endl << "YOU HIT A BOMB\n";
-                cout << "GAME OVER\n" << endl;
-                cout << " 1) Play Again\n";
-                cout << " 2) Back To Menu\n";
-                cout << " 3) Exit Game\n";
+                cout << endl << "\e[31mYOU HIT A MINE\n";
+                cout << "GAME OVER\e[0m\n" << endl;
+                cout << "\e[32m 1)\e[0m Play Again\n";
+                cout << "\e[32m 2)\e[0m Back To Menu\n";
+                cout << "\e[31m 3)\e[0m Exit Game\n";
                 cin >> X;
                 if(X == "1"){set_display(); create(); display();}
                 else if(X == "2"){menu();}
@@ -413,17 +421,22 @@ void win(){
     system("clear");
     cout << " | A  B  C  D  E  F  G  H  I\n";
     cout << "—|———————————————————————————\n";
+    cout << " | \e[32mA  B  C  D  E  F  G  H  I\e[0m\n";
+    cout << "—|———————————————————————————\n";
     for (int i = 0; i < 9; i++){
-        cout << (i + 1) << "| ";
+        cout << "\e[32m" << (i + 1) << "\e[0m| ";
         for (int j = 0; j < 9; j++){
-            cout << COLUMN[i].row[j] << "  ";
+            if(COLUMN[i].row[j] == 'X'){cout << "\e[31m";}
+            else if(COLUMN[i].row[j] == '-'){cout << "\e[37m";}
+            else{cout << "\e[33m";}
+            cout << COLUMN[i].row[j] << "  \e[0m";
         }
         cout << endl;
     }
-    cout << endl << "CONGRATULATIONS! YOU FOUND ALL THE MINES!\n";
-    cout << " 1) Play Again\n";
-    cout << " 2) Back To Menu\n";
-    cout << " 3) Exit Game\n";
+    cout << endl << "\e[32mCONGRATULATIONS! YOU FOUND ALL THE MINES!\e[0m\n";
+    cout << "\e[32m 1)\e[0m Play Again\n";
+    cout << "\e[32m 2)\e[0m Back To Menu\n";
+    cout << "\e[31m 3)\e[0m Exit Game\n";
     cin >> X;
     if(X == "1"){set_display(); create(); display();}
     else if(X == "2"){menu();}
