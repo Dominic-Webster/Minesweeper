@@ -32,11 +32,11 @@ int main(){
 
 void menu(){
     system("clear");
-    cout << " -- MINESWEEPER --\n" << endl;
-    cout << " 1) Play Game\n";
-    cout << " 2) How To Play\n";
-    cout << " 3) Change Difficulty (Current: " << DIF << ")\n";
-    cout << " 4) Exit Game\n" << endl;
+    cout << "\e[36m -- MINESWEEPER --\e[0m\n" << endl;
+    cout << "\e[32m 1)\e[0m Play Game\n";
+    cout << "\e[32m 2)\e[0m How To Play\n";
+    cout << "\e[32m 3)\e[0m Change Difficulty (Current: " << DIF << ")\n";
+    cout << "\e[31m 4)\e[0m Exit Game\n" << endl;
     cout << " -> ";
     cin >> X;
     if (X == "1"){set_display(); create(); display();}
@@ -60,25 +60,25 @@ void set_display(){
 
 void instructions(){
     system("clear");
-    cout << " -- HOW TO PLAY --\n" << endl;
-    cout << " 1. Select a space (Example: A1, C9, etc)\n";
-    cout << " 2. A number represents how many mines are around the space\n";
-    cout << " 3. You can flag a space where you think a mine is\n";
-    cout << " 4. To flag, type F after the space name (Example: A1F, G4F, etc)\n";
-    cout << " 5. You win when every space is revealed or flagged\n" << endl;
-    cout << " 1) Back To Menu\n" << " -> ";
+    cout << "\e[36m -- HOW TO PLAY --\e[0m\n" << endl;
+    cout << "\e[35m 1.\e[0m Select a space (Example: A1, C9, etc)\n";
+    cout << "\e[35m 2.\e[0m A number represents how many mines are around the space\n";
+    cout << "\e[35m 3.\e[0m You can flag a space where you think a mine is\n";
+    cout << "\e[35m 4.\e[0m To flag, type F after the space name (Example: A1F, G4F, etc)\n";
+    cout << "\e[35m 5.\e[0m You win when every space is revealed or flagged\n" << endl;
+    cout << "\e[32m 1)\e[0m Back To Menu\n" << " -> ";
     cin >> X;
     menu();
 }
 
 void change_dif(){
     system("clear");
-    cout << " -- CHANGE DIFFICULTY --\n" << endl;
+    cout << "\e[32m -- CHANGE DIFFICULTY --\e[0m\n" << endl;
     cout << "Current Difficulty: " << DIF << endl;
-    cout << " 1) Easy\n";
-    cout << " 2) Challenging\n";
-    cout << " 3) Extreme\n";
-    cout << " 4) Back To Menu\n" << endl;
+    cout << "\e[32m 1)\e[0m Easy\n";
+    cout << "\e[32m 2)\e[0m Challenging\n";
+    cout << "\e[32m 3)\e[0m Extreme\n";
+    cout << "\e[32m 4)\e[0m Back To Menu\n" << endl;
     cout << " -> ";
     cin >> X;
     if (X == "1"){
@@ -99,17 +99,20 @@ void change_dif(){
 
 void display(){
     system("clear");
-    cout << " | A  B  C  D  E  F  G  H  I\n";
+    cout << " | \e[32mA  B  C  D  E  F  G  H  I\e[0m\n";
     cout << "—|———————————————————————————\n";
     for (int i = 0; i < 9; i++){
-        cout << (i + 1) << "| ";
+        cout << "\e[32m" << (i + 1) << "\e[0m| ";
         for (int j = 0; j < 9; j++){
-            cout << COLUMN[i].row[j] << "  ";
+            if(COLUMN[i].row[j] == 'X'){cout << "\e[31m";}
+            else if(COLUMN[i].row[j] == '-'){cout << "\e[37m";}
+            else{cout << "\e[33m";}
+            cout << COLUMN[i].row[j] << "  \e[0m";
         }
         cout << endl;
     }
     cout << endl;
-    cout << " Enter tile location (A1 or A1F) [q: quit to menu]\n";
+    cout << " Enter tile location (A1 or A1F) [\e[35mq:\e[0m quit to menu]\n";
     cout << " -> ";
     cin >> X;
     if (X == "q" || X == "Q"){
