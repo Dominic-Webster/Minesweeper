@@ -419,8 +419,6 @@ void calculate(string str){
 
 void win(){
     system("clear");
-    cout << " | A  B  C  D  E  F  G  H  I\n";
-    cout << "—|———————————————————————————\n";
     cout << " | \e[32mA  B  C  D  E  F  G  H  I\e[0m\n";
     cout << "—|———————————————————————————\n";
     for (int i = 0; i < 9; i++){
